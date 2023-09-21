@@ -1,3 +1,18 @@
+///////////////////////////////////////////////////////////////////////////
+//                   PROJETO - CADASTRO CLIENTE BANCARIO                 //
+///////////////////////////////////////////////////////////////////////////
+// Registro de Alterações:                                               //
+// 21/09/2023 | Criação do Titulo no script                              //
+// 00/00/0000 |                                                          //
+// 00/00/0000 |                                                          //
+// 00/00/0000 |                                                          // 
+///////////////////////////////////////////////////////////////////////////
+// Desenvolvedores:  Anderson Celso Menzes Diniz Ribeiro                 //
+//                   Orquidea Barbosa Da Silva                           //
+//                   Matheus Felix Marinho                               //
+//                   Igor Eduardo Ramos                                  //
+///////////////////////////////////////////////////////////////////////////
+
 const readline = require("readline-sync"); // Importa a biblioteca readline-sync para interagir com o usuário via console.
 
 class Cliente {
@@ -329,8 +344,7 @@ function excluirCliente(cpf) {
     const indice = banco.clientes.findIndex(cliente => cliente.cpf === cpf);
     // Se o índice for diferente de -1, significa que o cliente foi encontrado.
     if (indice !== -1) {
-        // Remove o cliente da lista usando splice.
-        banco.clientes.splice(indice, 1);
+        banco.clientes.splice(indice, 1); // Remove o cliente da lista usando splice.
     }
 }
 
@@ -343,14 +357,12 @@ function confirmarExclusao() {
 
 // Função para validar se um valor é um número positivo.
 function validarValor(valor) {
-    // Retorna true se o valor for um número (não NaN) e for maior que zero.
-    return !isNaN(valor) && valor > 0;
+    return !isNaN(valor) && valor > 0; // Retorna true se o valor for um número (não NaN) e for maior que zero.
 }
 
 // Função para validar um número de CPF com 11 dígitos numéricos.
 function validarCPF(cpf) {
-    // Retorna true se o CPF tiver exatamente 11 dígitos numéricos.
-    return /^[0-9]{11}$/.test(cpf);
+    return /^[0-9]{11}$/.test(cpf); // Retorna true se o CPF tiver exatamente 11 dígitos numéricos.
 }
 
 // Função para obter o nome do cliente.
@@ -362,8 +374,7 @@ function obterNomeCliente() {
         return nome;
     } else {
         console.log("Erro: Nome inválido.");
-        // Pausa a execução até que o usuário pressione uma tecla.
-        readline.keyInPause();
+        readline.keyInPause(); // Pausa a execução até que o usuário pressione uma tecla.
         return null;
     }
 }
@@ -377,8 +388,7 @@ function obterCPFCliente() {
         return cpf;
     } else {
         console.log("Erro: CPF inválido.");
-        // Pausa a execução até que o usuário pressione uma tecla.
-        readline.keyInPause();
+        readline.keyInPause(); // Pausa a execução até que o usuário pressione uma tecla.
         return null;
     }
 }
@@ -391,27 +401,23 @@ function obterSaldoCliente() {
     if (!isNaN(saldo) && saldo >= 0) {
         return saldo;
     } else {
-        console.log("Erro: Saldo inválido.");
-        // Pausa a execução até que o usuário pressione uma tecla.
-        readline.keyInPause();
+        console.log("Erro: Saldo inválido.");   
+        readline.keyInPause(); // Pausa a execução até que o usuário pressione uma tecla.
         return null;
     }
 }
 
 // Função para validar se um nome contém apenas letras e espaços.
 function validarNome(nome) {
-    // Retorna true se o nome contiver apenas letras e espaços (sem números ou caracteres especiais).
-    return /^[A-Za-z\s]+$/.test(nome);
+    return /^[A-Za-z\s]+$/.test(nome); // Retorna true se o nome contiver apenas letras e espaços (sem números ou caracteres especiais).
 }
 
-
 // Cria uma instância do objeto "Banco" para representar o sistema bancário.
-const banco = new Banco();
+const banco = new Banco(); 
 
 // Inicia um loop infinito que mantém o programa em execução até que o usuário decida sair.
 while (true) {
-    // Exibe o menu do sistema.
-    exibirMenu();
+    exibirMenu(); // Exibe o menu do sistema.
 
     // Solicita ao usuário que escolha uma opção digitando um número.
     const opcao = readline.questionInt("Escolha uma opção: ");
